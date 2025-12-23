@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Brain, Database, TrendingUp, Mail, Linkedin, Github, Twitter, Zap, Target, Menu, X, Code2, LineChart, Sparkles } from 'lucide-react';
+import { useState } from 'react';
+import { Brain, TrendingUp, Mail, Linkedin, Github, Twitter, Zap, Target, Menu, X, Code2, LineChart, Sparkles } from 'lucide-react';
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setMobileMenuOpen(false);
   };
