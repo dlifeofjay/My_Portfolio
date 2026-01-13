@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Brain, TrendingUp, Mail, Linkedin, Github, Twitter, Zap, Target, Menu, X, Code2, LineChart, Sparkles } from 'lucide-react';
+import profileImage from './assets/profile.jpeg';
 
 export default function Portfolio() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,6 +20,14 @@ export default function Portfolio() {
       link: "https://github.com/dlifeofjay/afro-express"
     },
     {
+      title: "Customer Churn Prediction System",
+      description: "Production-ready churn prediction with robust preprocessing using ColumnTransformer. Prevents data leakage, uses feature importance for business insights, and includes a deployed FastAPI backend with Streamlit frontend.",
+      tech: ["Python", "Scikit-learn", "FastAPI", "Streamlit", "Pandas"],
+      impact: "Identify high-risk customers for retention campaigns",
+      metric: "Deployed",
+      link: "https://github.com/dlifeofjay/Churn_Notebook"
+    },
+    {
       title: "Supermarket Customer Segmentation",
       description: "Analyzed 700,000+ customer transactions using exploratory data analysis. Implemented K-Means clustering to create 3 distinct customer segments, enabling targeted marketing strategies that improved product personalization and customer acquisition.",
       tech: ["Python", "Scikit-learn", "Pandas", "Power BI"],
@@ -27,12 +36,28 @@ export default function Portfolio() {
       link: "https://github.com/dlifeofjay/AI-FOR-BUSINESS-REPORT"
     },
     {
+      title: "Loan Approval Prediction Model",
+      description: "ML system that predicts loan application outcomes based on applicant financial and personal data. Features EDA, data preprocessing, and Decision Tree classification to support data-driven lending decisions.",
+      tech: ["Python", "Scikit-learn", "Pandas", "Decision Trees", "EDA"],
+      impact: "Automated credit risk assessment",
+      metric: "FinTech",
+      link: "https://github.com/dlifeofjay/Loan-Worthiness"
+    },
+    {
       title: "Revenue Forecasting Dashboard",
       description: "Built automated revenue forecasting system using Temporal Convolutional Networks to predict daily sales trends. Identified high-impact products to anticipate demand spikes with 92% accuracy.",
       tech: ["Python", "PyTorch", "Streamlit", "PostgreSQL", "TCN"],
       impact: "92% forecast accuracy",
       metric: "Real-Time",
       link: "https://github.com/dlifeofjay/Temporal-Convolutional-Networks"
+    },
+    {
+      title: "Configurable ETL Pipeline",
+      description: "A flexible, YAML-driven data preprocessing pipeline with Streamlit interface. Handles data cleaning, normalization, and encoding with automated logging, outputting production-ready datasets.",
+      tech: ["Python", "Pandas", "Streamlit", "YAML", "Scikit-learn"],
+      impact: "Reusable data preprocessing automation",
+      metric: "ETL Tool",
+      link: "https://github.com/dlifeofjay/Config_ETL_Pipeline"
     }
   ];
 
@@ -95,9 +120,12 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center">
             <div className="mb-6 relative">
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 flex items-center justify-center text-5xl font-bold relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent"></div>
-                <span className="relative z-10">J</span>
+              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 via-cyan-500 to-blue-600 p-1 relative overflow-hidden">
+                <img
+                  src={profileImage}
+                  alt="Jubril - Data Scientist & ML Engineer"
+                  className="w-full h-full rounded-full object-cover"
+                />
               </div>
               <div className="absolute -right-2 -top-2 w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center">
                 <Sparkles size={16} className="text-slate-950" />
@@ -369,7 +397,7 @@ export default function Portfolio() {
 
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-blue-900/30 text-center text-slate-400">
-        <p className="mb-2">© 2024 Jubril - Data Scientist & ML Engineer</p>
+        <p className="mb-2">© 2026 Jubril - Data Scientist & ML Engineer</p>
         <p className="text-sm italic text-slate-500">"Everything is a journey. Let's see where this one leads."</p>
       </footer>
     </div>
