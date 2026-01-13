@@ -124,7 +124,7 @@ export default function Portfolio() {
                 <img
                   src={profileImage}
                   alt="Jubril - Data Scientist & ML Engineer"
-                  className="w-full h-full rounded-full object-cover"
+                  className="w-full h-full rounded-full object-cover object-bottom"
                 />
               </div>
               <div className="absolute -right-2 -top-2 w-8 h-8 bg-cyan-400 rounded-full flex items-center justify-center">
