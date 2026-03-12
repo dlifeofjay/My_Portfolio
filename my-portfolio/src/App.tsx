@@ -55,7 +55,7 @@ export default function Portfolio() {
   const projects: Project[] = [
     {
       title: "AFBR v2.0: AI Business Intelligence Platform",
-      description: "Production-ready full-stack BI platform that connects to PostgreSQL, analyses patterns with ML, and uses GPT-4 to generate professional PDF stakeholder reports automatically.",
+      description: "Engineered a production-ready BI platform that automates stakeholder reporting using GPT-4 and ML pattern analysis, eliminating manual report generation and accelerating data-driven decision making.",
       tech: ["FastAPI", "GPT-4", "React", "Docker", "PostgreSQL", "OpenAI"],
       impact: "End-to-end automated reporting pipeline",
       metric: "Deployed",
@@ -64,7 +64,7 @@ export default function Portfolio() {
     },
     {
       title: "Afro-Express: Customer Intelligence Engine",
-      description: "Transformed raw ticket sales into a 3-segment behavioural intelligence system using KMeans clustering, PCA, and automated email campaigns tailored per segment — reducing manual outreach by 80%.",
+      description: "Drove an 80% reduction in manual marketing efforts by deploying a 3-segment behavioral clustering system (KMeans/PCA) that automatically triggers highly targeted email campaigns based on ticket purchase patterns.",
       tech: ["Python", "KMeans", "PCA", "Seaborn", "smtplib", "Pandas"],
       impact: "80% reduction in manual marketing effort",
       metric: "Applied DS",
@@ -73,7 +73,7 @@ export default function Portfolio() {
     },
     {
       title: "TCN Multivariate Sales Forecasting",
-      description: "Custom Temporal Convolutional Network built from scratch in PyTorch using causal + dilated convolutions. Achieves 92% forecast accuracy on multivariate time series — outperforming SARIMAX baselines.",
+      description: "Achieved a peak 92% forecasting accuracy on complex multivariate time-series data by engineering a custom PyTorch Temporal Convolutional Network, consistently outperforming traditional SARIMAX baselines for reliable sales predictions.",
       tech: ["PyTorch", "TCN", "Time Series", "Pandas", "Streamlit"],
       impact: "92% forecast accuracy vs SARIMAX baseline",
       metric: "Deep Learning",
@@ -82,7 +82,7 @@ export default function Portfolio() {
     },
     {
       title: "Text Emotion Classifier (Bi-LSTM + BERT)",
-      description: "PyTorch Bidirectional LSTM paired with BERT tokenizer to classify text into 11 fine-grained emotion categories. Achieves 79.7% accuracy trained from scratch on 50 epochs with Adam optimisation.",
+      description: "Delivered a fine-grained 11-class emotion detection model achieving 79.7% accuracy. Built from scratch using PyTorch Bi-LSTM and BERT tokenization to enable nuanced sentiment analysis for complex text data.",
       tech: ["PyTorch", "Bi-LSTM", "BERT", "HuggingFace", "Streamlit"],
       impact: "79.7% accuracy across 11 emotion classes",
       metric: "NLP Research",
@@ -91,7 +91,7 @@ export default function Portfolio() {
     },
     {
       title: "README Generator — Local LLM Dev Tool",
-      description: "Developer productivity tool that scans any codebase, indexes it into a ChromaDB vector store, and uses the Qwen3:8b model via LangChain to auto-generate structured, professional README documentation locally.",
+      description: "Accelerated developer onboarding and documentation workflows by creating a zero-cloud LLM tool (Qwen3 + ChromaDB) that autonomously scans entire codebases to generate structured, professional README files.",
       tech: ["LangChain", "Qwen3:8b", "ChromaDB", "Ollama", "Python"],
       impact: "Zero-cloud, fully local LLM documentation",
       metric: "LLM Tooling",
@@ -100,7 +100,7 @@ export default function Portfolio() {
     },
     {
       title: "Fake News Detection — Deep NLP Pipeline",
-      description: "End-to-end text authenticity system combining TF-IDF feature extraction with a trained Keras deep learning classifier. Distinguishes fake from genuine news with high precision using ensemble and neural methods.",
+      description: "Engineered a high-precision misinformation detection pipeline by pairing TF-IDF extraction with a Keras deep neural network, providing robust automated classification of genuine versus fake news content.",
       tech: ["Keras", "TF-IDF", "NLP", "Scikit-learn", "Python"],
       impact: "High-precision misinformation classification",
       metric: "NLP Pipeline",
@@ -109,7 +109,7 @@ export default function Portfolio() {
     },
     {
       title: "Diabetic Foot Complication Detection",
-      description: "Clinical research system for early detection of diabetic foot risk from thermographic images. Built a full signal processing pipeline: image segmentation → angiosome registration → symmetry analysis → ROC threshold tuning → Streamlit diagnostic dashboard with traffic-light risk classification.",
+      description: "Empowered clinicians with an early-warning diagnostic dashboard for diabetic foot complications. Processed raw thermographic imagery through a rigorous signal-processing and ROC-tuned pipeline to output instant High/Warning/Normal risk classifications.",
       tech: ["OpenCV", "scikit-learn", "Signal Processing", "ROC Analysis", "Streamlit"],
       impact: "Clinical dashboard: NORMAL / WARNING / HIGH RISK",
       metric: "Medical Research",
@@ -118,7 +118,7 @@ export default function Portfolio() {
     },
     {
       title: "Financial Inclusion Prediction",
-      description: "Policy-oriented ML model predicting banking access and financial inclusion across underserved African populations. Combines demographic, geographic, and mobile adoption data to guide intervention strategies.",
+      description: "Provided actionable intelligence for policy interventions by modeling demographic and mobile adoption data to predict financial inclusion rates across underserved populations, enabling targeted banking accessibility strategies.",
       tech: ["Scikit-learn", "Pandas", "EDA", "Feature Engineering", "Python"],
       impact: "Data-driven financial inclusion strategy",
       metric: "Policy Research",
@@ -127,7 +127,7 @@ export default function Portfolio() {
     },
     {
       title: "Configurable Data Preprocessing Pipeline",
-      description: "YAML-driven, modular preprocessing engine for tabular, image, and video data. Handles missing values, encoding, normalisation, outlier removal, frame extraction — all via a single config file. Ships with a Streamlit UI and run metadata logging.",
+      description: "Standardized cross-modality ML pipelines by building a unified YAML-driven preprocessing engine. Significantly reduced data prep time by automating cleaning, scaling, and feature extraction for tabular, image, and video datasets.",
       tech: ["Python", "YAML", "OpenCV", "Pandas", "Streamlit"],
       impact: "Unified pipeline for 3 data modalities",
       metric: "MLOps",
@@ -136,7 +136,7 @@ export default function Portfolio() {
     },
     {
       title: "Automated Credit Risk Assessment",
-      description: "ML model supporting data-driven lending decisions by predicting loan approval based on applicant financial history, credit score, income, and demographic features. Evaluated with ROC-AUC, F1, precision/recall.",
+      description: "Mitigated financial risk and accelerated lending approvals through an automated decision tree classifier. Leveraged financial history and demographic features to deliver highly precise creditworthiness predictions.",
       tech: ["Decision Trees", "Scikit-learn", "EDA", "ROC-AUC", "Pandas"],
       impact: "Precision-guided lending decisions",
       metric: "FinTech ML",
