@@ -348,36 +348,10 @@ export default function Portfolio() {
 
         {/* About Section */}
         <section id="about" className="py-20 px-6 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="lg:col-span-2 bento-card"
-            >
-              <div className="data-pulse"></div>
-              <div className="relative z-10">
-                <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                  <FlaskConical className="text-cyan-400" size={32} />
-                  Approach &amp; Philosophy
-                </h2>
-                <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
-                  <p>
-                    I am a Data Scientist who focuses on solving problems. Before I look at any code or build any models, I always start by understanding the problem we are trying to solve. Data is only useful if it helps us make better decisions.
-                  </p>
-                  <p>
-                    My work connects <span className="text-cyan-400 font-semibold italic">finding insights in data with building real systems</span>. This means I do not just find patterns in datasets. I also build the tools needed to actually put those models to use in the real world.
-                  </p>
-                  <p>
-                    Everything in this portfolio shows my ability to handle a project from start to finish. From cleaning the initial data to putting the final model to work, my goal is always to deliver results that are clear and reliable.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="bento-card border-cyan-500/30"
             >
