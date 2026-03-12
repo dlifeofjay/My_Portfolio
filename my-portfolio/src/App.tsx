@@ -13,7 +13,6 @@ import {
   Code2,
   LineChart,
   Sparkles,
-  Database,
   Layers,
   FlaskConical,
   ArrowUpRight,
@@ -299,9 +298,7 @@ export default function Portfolio() {
             transition={{ delay: 0.3 }}
             className="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed"
           >
-            I explore data, design experiments, and engineer intelligent systems —
-            from clinical thermographic imaging to LLM-powered BI tools.
-            Curious. Rigorous. End-to-end.
+            I am a Data Scientist and Machine Learning Engineer. I analyze data, build predictive models, and create automated tools that solve real problems. I handle the entire process from data cleaning to deploying the final application.
           </motion.p>
 
           <motion.div
@@ -496,7 +493,7 @@ export default function Portfolio() {
             viewport={{ once: true }}
           >
             <h2 className="text-5xl md:text-7xl font-bold mb-8">Let's build <br /><span className="text-gradient">something intelligent.</span></h2>
-            <p className="text-xl text-slate-400 mb-12">Whether you need a deep learning system, a research collaborator, or a data-driven product — I'm ready.</p>
+            <p className="text-xl text-slate-400 mb-12">Whether you need a custom AI model, a data analysis expert, or a complete data system, I am ready to help.</p>
 
             <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <a
@@ -530,7 +527,7 @@ export default function Portfolio() {
             <span className="font-bold text-slate-400">Jubril.ai</span>
             <span>© 2026</span>
           </div>
-          <div className="italic">"From raw data to intelligent systems — rigorously."</div>
+          <div className="italic">"From raw data to working solutions."</div>
           <div className="flex gap-8">
             <button onClick={() => scrollToSection('home')} className="hover:text-white transition-colors">Back to top</button>
           </div>
