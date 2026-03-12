@@ -55,7 +55,7 @@ export default function Portfolio() {
   const projects: Project[] = [
     {
       title: "AFBR v2.0: AI Business Intelligence Platform",
-      description: "Engineered a production-ready BI platform that automates stakeholder reporting using GPT-4 and ML pattern analysis, eliminating manual report generation and accelerating data-driven decision making.",
+      description: "Engineered an automated AI data analyst platform that ingests raw e-commerce data, performs robust Pandas-based cleaning and aggregation, and leverages GPT-4 to instantly generate strategic insights, trend forecasts, and actionable business recommendations.",
       tech: ["FastAPI", "GPT-4", "React", "Docker", "PostgreSQL", "OpenAI"],
       impact: "End-to-end automated reporting pipeline",
       metric: "Deployed",
