@@ -366,21 +366,13 @@ export default function Portfolio() {
                 </h2>
                 <div className="space-y-6 text-slate-300 text-lg leading-relaxed">
                   <p>
-                    I don't just train models — I ask the right questions first. Whether it's building a{' '}
-                    <span className="text-white font-semibold">clinical thermography pipeline</span> for
-                    diabetic foot detection or orchestrating{' '}
-                    <span className="text-white font-semibold">GPT-4 for automated stakeholder reporting</span>,
-                    my process starts with curiosity and ends with something that actually runs.
+                    I am a Data Scientist who focuses on solving problems. Before I look at any code or build any models, I always start by understanding the problem we are trying to solve. Data is only useful if it helps us make better decisions.
                   </p>
                   <p>
-                    I span the full stack of modern data intelligence —{' '}
-                    <span className="text-cyan-400 font-semibold italic">exploratory research,
-                      deep learning engineering, NLP systems, and BI automation</span> —
-                    because the most interesting problems don't fit neatly into one box.
+                    My work connects <span className="text-cyan-400 font-semibold italic">finding insights in data with building real systems</span>. This means I do not just find patterns in datasets. I also build the tools needed to actually put those models to use in the real world.
                   </p>
                   <p>
-                    Every project in this portfolio was built from scratch, trained, evaluated, and shipped.
-                    No wrappers, no shortcuts.
+                    Everything in this portfolio shows my ability to handle a project from start to finish. From cleaning the initial data to putting the final model to work, my goal is always to deliver results that are clear and reliable.
                   </p>
                 </div>
               </div>
