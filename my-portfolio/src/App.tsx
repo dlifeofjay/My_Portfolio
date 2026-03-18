@@ -141,6 +141,15 @@ export default function Portfolio() {
       metric: "FinTech ML",
       link: "https://github.com/dlifeofjay/Loan-Worthiness",
       category: "Data Science"
+    },
+    {
+      title: "Bank Fraud Detection — Isolation Forest",
+      description: "Surfaced suspicious debit transactions without any labelled fraud data by applying Isolation Forest anomaly detection. Engineered behavioural features (IP frequency, device reuse, login velocity) and statistically validated findings via Welch's t-test (p ≈ 0.000004).",
+      tech: ["Isolation Forest", "Scikit-learn", "Pandas", "Seaborn", "SciPy"],
+      impact: "Flagged ~10% of debit transactions as anomalous",
+      metric: "Anomaly Detection",
+      link: "https://github.com/dlifeofjay/Isolation-Forest",
+      category: "Data Science"
     }
   ];
 
@@ -150,7 +159,7 @@ export default function Portfolio() {
     : projects.filter(p => p.category === activeTab);
 
   const stats = [
-    { label: "Projects Shipped", value: "10+", icon: Cpu },
+    { label: "Projects Shipped", value: "11+", icon: Cpu },
     { label: "Research Domains", value: "5", icon: FlaskConical },
     { label: "Peak Model Accuracy", value: "92%", icon: Target },
   ];
@@ -385,7 +394,7 @@ export default function Portfolio() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">Selected <span className="text-gradient">Work.</span></h2>
-              <p className="text-slate-400 max-w-lg">10 hand-picked projects spanning deep learning, NLP, research, BI automation, and data science.</p>
+              <p className="text-slate-400 max-w-lg">11 hand-picked projects spanning deep learning, NLP, research, BI automation, and data science.</p>
             </div>
 
             <div className="flex flex-wrap gap-2 bg-slate-900/50 p-1.5 rounded-2xl border border-white/5 backdrop-blur-md">
