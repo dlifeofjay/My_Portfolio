@@ -122,7 +122,7 @@ export default function Portfolio() {
           <img src={profileImg} alt="Jubril Ifekoya" className="profile-img" />
         </div>
         <h1>Jubril Ifekoya</h1>
-        <p>A Business-Focused Data Scientist & ML Engineer. I solve immediate business problems through automated intelligence and data-driven strategy before scaling to advanced technical solutions.</p>
+        <p>I don’t just solve business problems, I uncover the ones businesses never knew existed. From identifying revenue gaps and optimizing cost drivers to enabling targeted and effective marketing, I find leverage with data.</p>
         <button onClick={scrollToContent} className="btn-continue">
           <ChevronDown size={32} className="mx-auto" />
         </button>
