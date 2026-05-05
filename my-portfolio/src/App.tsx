@@ -1,28 +1,12 @@
 import { useState, useEffect } from 'react';
 import {
-  Brain,
-  TrendingUp,
   Mail,
   Linkedin,
   Github,
   Twitter,
-  Zap,
-  Target,
-  Menu,
-  X,
-  Code2,
-  LineChart,
-  Sparkles,
-  Layers,
-  FlaskConical,
-  ArrowUpRight,
   ExternalLink,
-  ChevronRight,
-  Cpu,
-  BookOpen,
+  ChevronDown,
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
-import profileImage from './assets/profile.jpeg';
 
 // Types
 interface Project {
@@ -30,492 +14,185 @@ interface Project {
   description: string;
   tech: string[];
   impact: string;
-  metric: string;
   link: string;
-  category: string;
 }
 
 export default function Portfolio() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState('All');
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > window.innerHeight - 100);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    setMobileMenuOpen(false);
+  const scrollToContent = () => {
+    document.getElementById('main')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const projects: Project[] = [
     {
-      title: "AFBR v2.0: AI Business Intelligence Platform",
-      description: "Engineered an automated AI data analyst platform that ingests raw e-commerce data, performs robust Pandas-based cleaning and aggregation, and leverages GPT-4 to instantly generate strategic insights, trend forecasts, and actionable business recommendations.",
-      tech: ["FastAPI", "GPT-4", "React", "Docker", "PostgreSQL", "OpenAI"],
-      impact: "End-to-end automated reporting pipeline",
-      metric: "Deployed",
-      link: "https://github.com/dlifeofjay/AFBR-Version-2",
-      category: "BI & Automation"
-    },
-    {
       title: "Afro-Express: Customer Intelligence Engine",
       description: "Drove an 80% reduction in manual marketing efforts by deploying a 3-segment behavioral clustering system (KMeans/PCA) that automatically triggers highly targeted email campaigns based on ticket purchase patterns.",
-      tech: ["Python", "KMeans", "PCA", "Seaborn", "smtplib", "Pandas"],
+      tech: ["Python", "KMeans", "PCA", "Seaborn"],
       impact: "80% reduction in manual marketing effort",
-      metric: "Applied DS",
       link: "https://github.com/dlifeofjay/afro-express",
-      category: "BI & Automation"
     },
     {
-      title: "TCN Multivariate Sales Forecasting",
-      description: "Achieved a peak 92% forecasting accuracy on complex multivariate time-series data by engineering a custom PyTorch Temporal Convolutional Network, consistently outperforming traditional SARIMAX baselines for reliable sales predictions.",
-      tech: ["PyTorch", "TCN", "Time Series", "Pandas", "Streamlit"],
-      impact: "92% forecast accuracy vs SARIMAX baseline",
-      metric: "Deep Learning",
-      link: "https://github.com/dlifeofjay/Temporal-Convolutional-Networks",
-      category: "Deep Learning"
-    },
-    {
-      title: "Text Emotion Classifier (Bi-LSTM + BERT)",
-      description: "Delivered a fine-grained 11-class emotion detection model achieving 79.7% accuracy. Built from scratch using PyTorch Bi-LSTM and BERT tokenization to enable nuanced sentiment analysis for complex text data.",
-      tech: ["PyTorch", "Bi-LSTM", "BERT", "HuggingFace", "Streamlit"],
-      impact: "79.7% accuracy across 11 emotion classes",
-      metric: "NLP Research",
-      link: "https://github.com/dlifeofjay/text_class",
-      category: "Deep Learning"
-    },
-    {
-      title: "README Generator — Local LLM Dev Tool",
-      description: "Accelerated developer onboarding and documentation workflows by creating a zero-cloud LLM tool (Qwen3 + ChromaDB) that autonomously scans entire codebases to generate structured, professional README files.",
-      tech: ["LangChain", "Qwen3:8b", "ChromaDB", "Ollama", "Python"],
-      impact: "Zero-cloud, fully local LLM documentation",
-      metric: "LLM Tooling",
-      link: "https://github.com/dlifeofjay",
-      category: "NLP & LLM"
-    },
-    {
-      title: "Fake News Detection — Deep NLP Pipeline",
-      description: "Engineered a high-precision misinformation detection pipeline by pairing TF-IDF extraction with a Keras deep neural network, providing robust automated classification of genuine versus fake news content.",
-      tech: ["Keras", "TF-IDF", "NLP", "Scikit-learn", "Python"],
-      impact: "High-precision misinformation classification",
-      metric: "NLP Pipeline",
-      link: "https://github.com/dlifeofjay/text_authenticity",
-      category: "NLP & LLM"
-    },
-    {
-      title: "Diabetic Foot Complication Detection",
-      description: "Empowered clinicians with an early-warning diagnostic dashboard for diabetic foot complications. Processed raw thermographic imagery through a rigorous signal-processing and ROC-tuned pipeline to output instant High/Warning/Normal risk classifications.",
-      tech: ["OpenCV", "scikit-learn", "Signal Processing", "ROC Analysis", "Streamlit"],
-      impact: "Clinical dashboard: NORMAL / WARNING / HIGH RISK",
-      metric: "Medical Research",
-      link: "https://github.com/dlifeofjay",
-      category: "Research"
-    },
-    {
-      title: "Financial Inclusion Prediction",
-      description: "Provided actionable intelligence for policy interventions by modeling demographic and mobile adoption data to predict financial inclusion rates across underserved populations, enabling targeted banking accessibility strategies.",
-      tech: ["Scikit-learn", "Pandas", "EDA", "Feature Engineering", "Python"],
-      impact: "Data-driven financial inclusion strategy",
-      metric: "Policy Research",
-      link: "https://github.com/dlifeofjay/Financial-Inclusion",
-      category: "Research"
-    },
-    {
-      title: "Configurable Data Preprocessing Pipeline",
-      description: "Standardized cross-modality ML pipelines by building a unified YAML-driven preprocessing engine. Significantly reduced data prep time by automating cleaning, scaling, and feature extraction for tabular, image, and video datasets.",
-      tech: ["Python", "YAML", "OpenCV", "Pandas", "Streamlit"],
-      impact: "Unified pipeline for 3 data modalities",
-      metric: "MLOps",
-      link: "https://github.com/dlifeofjay",
-      category: "Data Science"
+      title: "AFBR v2.0: AI Business Intelligence Platform",
+      description: "Engineered an automated AI data analyst platform that ingests raw e-commerce data, performs robust Pandas-based cleaning and aggregation, and leverages GPT-4 to instantly generate strategic insights, trend forecasts, and actionable business recommendations.",
+      tech: ["FastAPI", "GPT-4", "React", "PostgreSQL"],
+      impact: "End-to-end automated reporting pipeline",
+      link: "https://github.com/dlifeofjay/AFBR-Version-2",
     },
     {
       title: "Automated Credit Risk Assessment",
-      description: "Mitigated financial risk and accelerated lending approvals through an automated decision tree classifier. Leveraged financial history and demographic features to deliver highly precise creditworthiness predictions.",
-      tech: ["Decision Trees", "Scikit-learn", "EDA", "ROC-AUC", "Pandas"],
+      description: "Mitigated financial risk and accelerated lending approvals through an automated decision tree classifier leveraging financial history and demographic features to deliver highly precise creditworthiness predictions.",
+      tech: ["Decision Trees", "Scikit-learn", "EDA", "Pandas"],
       impact: "Precision-guided lending decisions",
-      metric: "FinTech ML",
       link: "https://github.com/dlifeofjay/Loan-Worthiness",
-      category: "Data Science"
     },
     {
       title: "Bank Fraud Detection — Isolation Forest",
-      description: "Surfaced suspicious debit transactions without any labelled fraud data by applying Isolation Forest anomaly detection. Engineered behavioural features (IP frequency, device reuse, login velocity) and statistically validated findings via Welch's t-test (p ≈ 0.000004).",
-      tech: ["Isolation Forest", "Scikit-learn", "Pandas", "Seaborn", "SciPy"],
+      description: "Surfaced suspicious debit transactions using Isolation Forest anomaly detection. Engineered behavioural features (IP frequency, device reuse, login velocity) and statistically validated findings to mitigate financial risk.",
+      tech: ["Isolation Forest", "Scikit-learn", "Pandas", "SciPy"],
       impact: "Flagged ~10% of debit transactions as anomalous",
-      metric: "Anomaly Detection",
       link: "https://github.com/dlifeofjay/Isolation-Forest",
-      category: "Data Science"
+    },
+    {
+      title: "Financial Inclusion Prediction",
+      description: "Modeling demographic and mobile adoption data to predict financial inclusion rates across underserved populations, enabling targeted banking accessibility strategies and data-driven policy interventions.",
+      tech: ["Scikit-learn", "Pandas", "EDA", "Python"],
+      impact: "Data-driven financial inclusion strategy",
+      link: "https://github.com/dlifeofjay/Financial-Inclusion",
+    },
+    {
+      title: "TCN Multivariate Sales Forecasting",
+      description: "Achieved a peak 92% forecasting accuracy on complex multivariate time-series data by engineering a custom PyTorch Temporal Convolutional Network, consistently outperforming traditional SARIMAX baselines.",
+      tech: ["PyTorch", "TCN", "Time Series", "Streamlit"],
+      impact: "92% forecast accuracy vs SARIMAX baseline",
+      link: "https://github.com/dlifeofjay/Temporal-Convolutional-Networks",
+    },
+    {
+      title: "Text Emotion Classifier (Bi-LSTM + BERT)",
+      description: "Delivered a fine-grained 11-class emotion detection model achieving 79.7% accuracy. Built using PyTorch Bi-LSTM and BERT tokenization to enable nuanced sentiment analysis for complex text data.",
+      tech: ["PyTorch", "Bi-LSTM", "BERT", "HuggingFace"],
+      impact: "79.7% accuracy across 11 emotion classes",
+      link: "https://github.com/dlifeofjay/text_class",
+    },
+    {
+      title: "README Generator — Local LLM Dev Tool",
+      description: "Accelerated developer onboarding by creating a zero-cloud LLM tool (Qwen3 + ChromaDB) that autonomously scans entire codebases to generate structured README files.",
+      tech: ["LangChain", "Qwen3:8b", "ChromaDB", "Ollama"],
+      impact: "Zero-cloud, fully local LLM documentation",
+      link: "https://github.com/dlifeofjay",
+    },
+    {
+      title: "Fake News Detection — Deep NLP Pipeline",
+      description: "Engineered a high-precision misinformation detection pipeline by pairing TF-IDF extraction with a Keras deep neural network for automated classification of genuine versus fake news content.",
+      tech: ["Keras", "TF-IDF", "NLP", "Scikit-learn"],
+      impact: "High-precision misinformation classification",
+      link: "https://github.com/dlifeofjay/text_authenticity",
+    },
+    {
+      title: "Diabetic Foot Complication Detection",
+      description: "Early-warning diagnostic dashboard for diabetic foot complications. Processed raw thermographic imagery through signal-processing and ROC-tuned pipeline to output instant risk classifications.",
+      tech: ["OpenCV", "scikit-learn", "Signal Processing"],
+      impact: "Clinical dashboard: NORMAL / WARNING / HIGH RISK",
+      link: "https://github.com/dlifeofjay",
+    },
+    {
+      title: "Configurable Data Preprocessing Pipeline",
+      description: "Standardized cross-modality ML pipelines by building a unified YAML-driven preprocessing engine for tabular, image, and video datasets, significantly reducing data preparation time.",
+      tech: ["Python", "YAML", "OpenCV", "Pandas"],
+      impact: "Unified pipeline for 3 data modalities",
+      link: "https://github.com/dlifeofjay",
     }
   ];
 
-  const categories = ['All', 'Deep Learning', 'NLP & LLM', 'BI & Automation', 'Research', 'Data Science'];
-  const filteredProjects = activeTab === 'All'
-    ? projects
-    : projects.filter(p => p.category === activeTab);
-
-  const stats = [
-    { label: "Projects Shipped", value: "11+", icon: Cpu },
-    { label: "Research Domains", value: "5", icon: FlaskConical },
-    { label: "Peak Model Accuracy", value: "92%", icon: Target },
-  ];
-
-  const skills = {
-    "Deep Learning": ["PyTorch", "Bi-LSTM", "TCN", "BERT", "Transformers"],
-    "NLP & Language AI": ["LangChain", "Qwen3", "ChromaDB", "TF-IDF", "Text Classification"],
-    "Data Science & BI": ["Scikit-learn", "Pandas", "Power BI", "Streamlit", "Statistical Modelling"],
-    "Research & Signal Proc.": ["Image Segmentation", "ROC Analysis", "Medical Imaging", "Morphological Ops"],
-    "MLOps & Engineering": ["FastAPI", "Docker", "PostgreSQL", "YAML Pipelines", "Feature Engineering"],
-  };
-
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'Deep Learning': return <Cpu size={24} />;
-      case 'NLP & LLM': return <Brain size={24} />;
-      case 'BI & Automation': return <Zap size={24} />;
-      case 'Research': return <FlaskConical size={24} />;
-      case 'Data Science': return <LineChart size={24} />;
-      default: return <Code2 size={24} />;
-    }
-  };
+  const featuredProject = projects[0];
+  const gridProjects = projects.slice(1);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden selection:bg-cyan-500/30">
-      {/* Dynamic Background */}
-      <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(15,23,42,0)_0%,rgba(2,6,23,1)_100%)]"></div>
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full animate-pulse-slow"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-violet-600/10 blur-[120px] rounded-full animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-[40%] right-[20%] w-[25%] h-[25%] bg-cyan-600/5 blur-[100px] rounded-full animate-pulse-slow" style={{ animationDelay: '4s' }}></div>
-      </div>
+    <div className="min-h-screen">
+      {/* Intro */}
+      <section className="intro">
+        <h1>Jubril Ifekoya</h1>
+        <p>A Business-Focused Data Scientist & ML Engineer. I solve immediate business problems through automated intelligence and data-driven strategy before scaling to advanced technical solutions.</p>
+        <button onClick={scrollToContent} className="btn-continue">
+          <ChevronDown size={32} className="mx-auto" />
+        </button>
+      </section>
 
-      {/* Header */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-slate-950/80 backdrop-blur-xl border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="text-2xl font-bold text-gradient flex items-center gap-2 group cursor-pointer"
-            onClick={() => scrollToSection('home')}
-          >
-            <Layers className="text-cyan-400 group-hover:rotate-180 transition-transform duration-500" size={24} />
-            <span>Jubril.ai</span>
-          </motion.div>
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {['About', 'Portfolio', 'Contact'].map((item, idx) => (
-              <motion.button
-                key={item}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-sm font-medium text-slate-400 hover:text-white transition-colors relative group"
-              >
-                {item}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full"></span>
-              </motion.button>
-            ))}
-            <motion.button
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => scrollToSection('contact')}
-              className="px-5 py-2.5 bg-white text-slate-950 rounded-full text-sm font-bold hover:shadow-lg hover:shadow-white/10 transition-all"
-            >
-              Get in Touch
-            </motion.button>
-          </div>
-
-          {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </nav>
-
-      {/* Mobile Nav Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-slate-950 flex flex-col items-center justify-center gap-8 pt-20"
-          >
-            {['About', 'Portfolio', 'Contact'].map((item) => (
-              <button
-                key={item}
-                onClick={() => scrollToSection(item.toLowerCase())}
-                className="text-3xl font-bold hover:text-cyan-400 transition-colors"
-              >
-                {item}
-              </button>
-            ))}
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      <main className="relative z-10">
-        {/* Hero Section */}
-        <section id="home" className="min-h-screen pt-40 pb-20 px-6 flex flex-col items-center justify-center text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 relative group"
-          >
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl rotate-3 group-hover:rotate-0 transition-transform duration-500 overflow-hidden border-2 border-white/10 relative">
-              <img src={profileImage} alt="Jubril" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-110 group-hover:scale-100" />
-              <div className="absolute inset-0 bg-blue-500/10 group-hover:bg-transparent transition-colors"></div>
-            </div>
-            <div className="absolute -bottom-2 -right-2 bg-cyan-400 text-slate-950 p-2 rounded-xl border-4 border-slate-950 shadow-xl">
-              <Sparkles size={20} />
-            </div>
-          </motion.div>
-
-          {/* Identity Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="mb-5 flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/5 text-cyan-400 text-sm font-semibold tracking-wide"
-          >
-            <BookOpen size={14} />
-            Data Scientist &amp; Analyst · ML Engineer · Researcher
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight"
-          >
-            From Raw Data to <br />
-            <span className="text-gradient">Deployed Intelligence.</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-lg md:text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed"
-          >
-            I am a Data Scientist and Machine Learning Engineer. I analyze data, build predictive models, and create automated tools that solve real problems. I handle the entire process from data cleaning to deploying the final application.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex gap-4 flex-wrap justify-center"
-          >
-            <button
-              onClick={() => scrollToSection('portfolio')}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl font-bold hover:shadow-2xl hover:shadow-cyan-500/20 transition-all hover:-translate-y-1 flex items-center gap-2 group"
-            >
-              View My Work
-              <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </button>
-            <button
-              onClick={() => scrollToSection('about')}
-              className="px-8 py-4 glass hover:bg-white/10 rounded-2xl font-bold transition-all hover:-translate-y-1"
-            >
-              My Approach
-            </button>
-          </motion.div>
-        </section>
-
-        {/* Stats Bento Grid */}
-        <section className="py-20 px-6 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {stats.map((stat, idx) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bento-card group"
-              >
-                <div className="data-pulse"></div>
-                <div className="relative z-10">
-                  <stat.icon className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform" size={32} />
-                  <div className="text-4xl md:text-5xl font-bold mb-2">{stat.value}</div>
-                  <div className="text-slate-400 font-medium uppercase tracking-wider text-sm">{stat.label}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
-
-        {/* About Section */}
-        <section id="about" className="py-20 px-6 max-w-7xl mx-auto">
-          <div className="max-w-4xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bento-card border-cyan-500/30"
-            >
-              <div className="relative z-10 flex flex-col justify-between h-full">
-                <h3 className="text-2xl font-bold mb-6">Technical Arsenal</h3>
-                <div className="space-y-5">
-                  {Object.entries(skills).map(([cat, items]) => (
-                    <div key={cat}>
-                      <div className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-2">{cat}</div>
-                      <div className="flex flex-wrap gap-2">
-                        {items.slice(0, 3).map(skill => (
-                          <span key={skill} className="px-3 py-1 bg-white/5 rounded-lg text-xs border border-white/5">{skill}</span>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <button
-                  onClick={() => scrollToSection('portfolio')}
-                  className="mt-8 text-sm font-bold text-cyan-400 flex items-center gap-2 hover:translate-x-1 transition-transform"
-                >
-                  See Projects <ChevronRight size={16} />
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Portfolio Section */}
-        <section id="portfolio" className="py-20 px-6 max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-4">Selected <span className="text-gradient">Work.</span></h2>
-              <p className="text-slate-400 max-w-lg">11 hand-picked projects spanning deep learning, NLP, research, BI automation, and data science.</p>
-            </div>
-
-            <div className="flex flex-wrap gap-2 bg-slate-900/50 p-1.5 rounded-2xl border border-white/5 backdrop-blur-md">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveTab(cat)}
-                  className={`px-4 py-2 rounded-xl text-sm font-bold transition-all ${activeTab === cat
-                    ? 'bg-white text-slate-950 shadow-xl'
-                    : 'text-slate-400 hover:text-white'
-                    }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <motion.div
-            layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            <AnimatePresence mode='popLayout'>
-              {filteredProjects.map((project) => (
-                <motion.div
-                  key={project.title}
-                  layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.3 }}
-                  className="bento-card group hover:border-cyan-500/50"
-                >
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="flex justify-between items-start mb-6">
-                      <div className="w-12 h-12 glass rounded-2xl flex items-center justify-center text-cyan-400">
-                        {getCategoryIcon(project.category)}
-                      </div>
-                      <span className="text-[10px] uppercase tracking-widest bg-cyan-500/10 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/20 font-bold">
-                        {project.metric}
-                      </span>
-                    </div>
-
-                    <h3 className="text-lg font-bold mb-3 group-hover:text-cyan-400 transition-colors leading-tight">{project.title}</h3>
-                    <p className="text-slate-400 text-sm mb-6 flex-grow leading-relaxed">{project.description}</p>
-
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {project.tech.map(t => (
-                        <span key={t} className="text-[10px] font-bold text-slate-500 bg-slate-950 px-2 py-1 rounded border border-white/5">{t}</span>
-                      ))}
-                    </div>
-
-                    <div className="pt-6 border-t border-white/5 flex items-center justify-between">
-                      <div className="flex items-center gap-2 text-xs font-bold text-white">
-                        <TrendingUp size={14} className="text-cyan-400" />
-                        {project.impact}
-                      </div>
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="w-10 h-10 glass rounded-xl flex items-center justify-center hover:bg-white hover:text-slate-950 transition-all"
-                      >
-                        <ExternalLink size={18} />
-                      </a>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-        </section>
-
-        {/* Contact Section */}
-        <section id="contact" className="py-40 px-6 max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-5xl md:text-7xl font-bold mb-8">Let's build <br /><span className="text-gradient">something intelligent.</span></h2>
-            <p className="text-xl text-slate-400 mb-12">Whether you need a custom AI model, a data analysis expert, or a complete data system, I am ready to help.</p>
-
-            <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-              <a
-                href="mailto:jubrilifekoya@gmail.com"
-                className="w-full md:w-auto px-10 py-5 bg-white text-slate-950 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1 flex items-center justify-center gap-3"
-              >
-                <Mail size={24} />
-                Start a Conversation
-              </a>
-              <div className="flex gap-4">
-                <a href="https://linkedin.com/in/jubril-ifekoya-513491354" target="_blank" rel="noreferrer" className="w-14 h-14 glass rounded-2xl flex items-center justify-center hover:text-cyan-400 transition-all border border-white/5">
-                  <Linkedin size={24} />
-                </a>
-                <a href="https://github.com/dlifeofjay" target="_blank" rel="noreferrer" className="w-14 h-14 glass rounded-2xl flex items-center justify-center hover:text-cyan-400 transition-all border border-white/5">
-                  <Github size={24} />
-                </a>
-                <a href="https://x.com/dlifeof_jay" target="_blank" rel="noreferrer" className="w-14 h-14 glass rounded-2xl flex items-center justify-center hover:text-cyan-400 transition-all border border-white/5">
-                  <Twitter size={24} />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="py-12 border-t border-white/5 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-sm">
-          <div className="flex items-center gap-2">
-            <Layers size={18} className="text-cyan-400" />
-            <span className="font-bold text-slate-400">Jubril.ai</span>
-            <span>© 2026</span>
-          </div>
-          <div className="italic">"From raw data to working solutions."</div>
+      {/* Main Wrapper */}
+      <div id="main" className="main-wrapper">
+        {/* Sticky Nav */}
+        <nav className={`nav-sticky ${scrolled ? 'shadow-md' : ''}`}>
           <div className="flex gap-8">
-            <button onClick={() => scrollToSection('home')} className="hover:text-white transition-colors">Back to top</button>
+            <a href="#main" className="nav-link">Projects</a>
+            <a href="#contact" className="nav-link">Contact</a>
           </div>
+          <div className="flex gap-4">
+            <a href="https://linkedin.com/in/jubril-ifekoya-513491354" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-slate-900"><Linkedin size={18} /></a>
+            <a href="https://github.com/dlifeofjay" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-slate-900"><Github size={18} /></a>
+            <a href="https://x.com/dlifeof_jay" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-slate-900"><Twitter size={18} /></a>
+          </div>
+        </nav>
+
+        {/* Featured Project */}
+        <article className="project-featured">
+          <span className="text-xs-bold">Featured Project</span>
+          <h2 className="project-title mt-4">{featuredProject.title}</h2>
+          <p className="project-desc max-w-2xl mx-auto">{featuredProject.description}</p>
+          <div className="flex flex-wrap gap-2 justify-center mb-8">
+            {featuredProject.tech.map(t => (
+              <span key={t} className="text-[10px] uppercase font-bold text-slate-400">{t}</span>
+            ))}
+          </div>
+          <a href={featuredProject.link} target="_blank" rel="noreferrer" className="btn-project">View Project</a>
+        </article>
+
+        {/* Project Grid */}
+        <div className="project-grid">
+          {gridProjects.map((project, idx) => (
+            <article key={idx} className="project-item">
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-desc">{project.description}</p>
+              <div className="flex flex-wrap gap-2 justify-center mb-8">
+                {project.tech.map(t => (
+                  <span key={t} className="text-[10px] uppercase font-bold text-slate-400">{t}</span>
+                ))}
+              </div>
+              <a href={project.link} target="_blank" rel="noreferrer" className="btn-project">View Project</a>
+            </article>
+          ))}
         </div>
-      </footer>
+
+        {/* Contact/Footer Section */}
+        <section id="contact" className="footer">
+          <div className="footer-section">
+            <h3>Contact Me</h3>
+            <p className="text-sm text-slate-500 mb-8">I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.</p>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <Mail size={18} className="text-slate-400" />
+                <a href="mailto:jubrilifekoya@gmail.com" className="text-sm font-bold border-b border-transparent hover:border-slate-900 transition-all">jubrilifekoya@gmail.com</a>
+              </div>
+              <div className="social-links">
+                <a href="https://linkedin.com/in/jubril-ifekoya-513491354" target="_blank" rel="noreferrer" className="social-icon"><Linkedin size={18} /></a>
+                <a href="https://github.com/dlifeofjay" target="_blank" rel="noreferrer" className="social-icon"><Github size={18} /></a>
+                <a href="https://x.com/dlifeof_jay" target="_blank" rel="noreferrer" className="social-icon"><Twitter size={18} /></a>
+              </div>
+            </div>
+          </div>
+          <div className="footer-section text-center md:text-right flex flex-col justify-end">
+            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="text-xs font-bold uppercase tracking-widest text-slate-400 hover:text-slate-900 mb-4 transition-colors">Back to top</button>
+            <p className="text-xs text-slate-400">© Jubril Ifekoya. All rights reserved.</p>
+            <p className="text-xs text-slate-400 mt-2">Design inspired by HTML5 UP</p>
+          </div>
+        </section>
+      </div>
     </div>
   );
 }

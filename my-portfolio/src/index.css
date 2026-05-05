@@ -1,100 +1,128 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-primary: #3b82f6;
-  --color-brand-secondary: #06b6d4;
-  --color-brand-dark: #020617;
-
-  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-float: float 6s ease-in-out infinite;
+  --color-bg-main: #ffffff;
+  --color-bg-alt: #f5f5f5;
+  --color-text-primary: #212931;
+  --color-text-secondary: #636e72;
+  --color-border: #dee2e6;
+  --color-accent: #1e252d;
 }
 
-@keyframes float {
-  0% {
-    transform: translateY(0px);
+@layer base {
+  body {
+    @apply bg-[var(--color-bg-alt)] text-[var(--color-text-primary)] font-sans selection:bg-slate-200;
+    margin: 0;
+    padding: 0;
   }
 
-  50% {
-    transform: translateY(-20px);
-  }
-
-  100% {
-    transform: translateY(0px);
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-black tracking-widest uppercase;
+    color: var(--color-text-primary);
   }
 }
 
-.glass {
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+/* Intro Section */
+.intro {
+  @apply min-h-screen flex flex-col items-center justify-center text-center p-10 bg-cover bg-center relative;
+  background-attachment: fixed;
+  background-image: linear-gradient(rgba(30, 37, 45, 0.7), rgba(30, 37, 45, 0.7)), url('/assets/profile.jpeg');
 }
 
-.glass-hover {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.intro h1 {
+  @apply text-5xl md:text-7xl text-white mb-6;
 }
 
-.glass-hover:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+.intro p {
+  @apply text-xl text-slate-300 max-w-2xl mb-10;
 }
 
-.text-gradient {
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  background-image: linear-gradient(to right, #60a5fa, #22d3ee, #3b82f6);
+.btn-continue {
+  @apply px-10 py-4 border-2 border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-slate-900 transition-all duration-300;
 }
 
-.bento-card {
-  border-radius: 1.5rem;
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Main Content Wrapper */
+.main-wrapper {
+  @apply max-w-5xl mx-auto bg-white border-x border-[var(--color-border)] shadow-sm;
 }
 
-.bento-card:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+/* Nav */
+.nav-sticky {
+  @apply sticky top-0 z-50 bg-white border-b border-[var(--color-border)] flex justify-between items-center px-10 py-4;
 }
 
-.data-pulse {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
+.nav-link {
+  @apply text-xs font-bold uppercase tracking-widest text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] transition-colors;
 }
 
-body {
-  @apply bg-slate-950 text-slate-100 selection:bg-cyan-500/30 font-sans;
+/* Projects */
+.project-featured {
+  @apply p-16 text-center border-b border-[var(--color-border)];
+}
+
+.project-grid {
+  @apply grid grid-cols-1 md:grid-cols-2;
+}
+
+.project-item {
+  @apply p-12 border-b border-[var(--color-border)] flex flex-col items-center text-center;
+}
+
+.project-item:nth-child(odd) {
+  @apply border-r border-[var(--color-border)];
+}
+
+.project-title {
+  @apply text-2xl mb-4;
+}
+
+.project-desc {
+  @apply text-sm text-[var(--color-text-secondary)] mb-8 leading-relaxed;
+}
+
+.btn-project {
+  @apply px-8 py-3 border-2 border-[var(--color-accent)] text-[var(--color-accent)] font-bold uppercase tracking-widest text-xs hover:bg-[var(--color-accent)] hover:text-white transition-all duration-300;
+}
+
+/* Footer */
+.footer {
+  @apply p-20 bg-[var(--color-bg-alt)] border-t border-[var(--color-border)] flex flex-col md:flex-row gap-10;
+}
+
+.footer-section {
+  @apply flex-1;
+}
+
+.footer-section h3 {
+  @apply text-sm mb-6 border-b border-[var(--color-border)] pb-2;
+}
+
+.social-links {
+  @apply flex gap-4 mt-4;
+}
+
+.social-icon {
+  @apply w-10 h-10 border border-[var(--color-border)] flex items-center justify-center rounded-full hover:bg-[var(--color-accent)] hover:text-white transition-all;
+}
+
+/* Utilities */
+.text-xs-bold {
+  @apply text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-text-secondary)];
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: var(--color-slate-950);
+  background: var(--color-bg-alt);
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-full transition-colors;
-  background-color: var(--color-slate-800);
+  background: var(--color-text-secondary);
+  border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--color-slate-700);
-}
+  background: var(--color-accent);
+}
