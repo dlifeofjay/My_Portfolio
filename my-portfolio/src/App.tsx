@@ -4,7 +4,6 @@ import {
   Linkedin,
   Github,
   Twitter,
-  ExternalLink,
   ChevronDown,
 } from 'lucide-react';
 
