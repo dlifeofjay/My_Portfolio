@@ -7,6 +7,8 @@ import {
   ChevronDown,
 } from 'lucide-react';
 
+import profileImg from './assets/profile.jpeg';
+
 // Types
 interface Project {
   title: string;
@@ -116,6 +118,9 @@ export default function Portfolio() {
     <div className="min-h-screen">
       {/* Intro */}
       <section className="intro">
+        <div className="profile-container mb-8">
+          <img src={profileImg} alt="Jubril Ifekoya" className="profile-img" />
+        </div>
         <h1>Jubril Ifekoya</h1>
         <p>A Business-Focused Data Scientist & ML Engineer. I solve immediate business problems through automated intelligence and data-driven strategy before scaling to advanced technical solutions.</p>
         <button onClick={scrollToContent} className="btn-continue">
