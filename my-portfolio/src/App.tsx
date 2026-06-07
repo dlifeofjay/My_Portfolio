@@ -33,82 +33,40 @@ export default function Portfolio() {
 
   const projects: Project[] = [
     {
-      title: "Afro-Express: Customer Intelligence Engine",
-      description: "Drove an 80% reduction in manual marketing efforts by deploying a 3-segment behavioral clustering system (KMeans/PCA) that automatically triggers highly targeted email campaigns based on ticket purchase patterns.",
-      tech: ["Python", "KMeans", "PCA", "Seaborn"],
-      impact: "80% reduction in manual marketing effort",
+      title: "Smart Travel Recommendation System",
+      description: "Predicts when a customer is likely to travel and recommends destinations based on their past behaviour and location. Built to drive smarter personalisation and help businesses connect the right offer with the right customer at the right time.",
+      tech: ["Python", "Mlxtend", "Scikit-learn", "Numpy", "Pandas", "SQL"],
+      impact: "Improve customer experience with targeted personalized marketing",
+      link: "https://github.com/dlifeofjay/Smart-Travel-Recommendation-System",
+    },
+    {
+      title: "Customer Segmentation and Targeted Marketing",
+      description: "Groups event attendees into distinct profiles based on their ticket-buying habits, then automatically sends each group a personalised email campaign. The result is more relevant communication, better engagement and a higher chance of repeat attendance.",
+      tech: ["Python", "Scikit-learn", "Pandas", "Email Automation"],
+      impact: "Customer profiling and improved advertisement campaign",
       link: "https://github.com/dlifeofjay/afro-express",
     },
     {
-      title: "AFBR v2.0: AI Business Intelligence Platform",
-      description: "Engineered an automated AI data analyst platform that ingests raw e-commerce data, performs robust Pandas-based cleaning and aggregation, and leverages GPT-4 to instantly generate strategic insights, trend forecasts, and actionable business recommendations.",
-      tech: ["FastAPI", "GPT-4", "React", "PostgreSQL"],
-      impact: "End-to-end automated reporting pipeline",
-      link: "https://github.com/dlifeofjay/AFBR-Version-2",
+      title: "Diabetic Foot Research Project",
+      description: "Uses medical imaging and data analysis to detect early signs of diabetic foot complications. Gives healthcare professionals a data-driven tool to flag high-risk patients before serious damage occurs, supported by a full research paper.",
+      tech: ["Python", "Computer Vision", "Streamlit", "Numpy", "Pandas"],
+      impact: "92% forecast accuracy",
+      link: "https://github.com/dlifeofjay/Thermograph-Images-CV2-ML",
     },
     {
-      title: "Automated Credit Risk Assessment",
-      description: "Mitigated financial risk and accelerated lending approvals through an automated decision tree classifier leveraging financial history and demographic features to deliver highly precise creditworthiness predictions.",
-      tech: ["Decision Trees", "Scikit-learn", "EDA", "Pandas"],
-      impact: "Precision-guided lending decisions",
-      link: "https://github.com/dlifeofjay/Loan-Worthiness",
-    },
-    {
-      title: "Bank Fraud Detection — Isolation Forest",
-      description: "Surfaced suspicious debit transactions using Isolation Forest anomaly detection. Engineered behavioural features (IP frequency, device reuse, login velocity) and statistically validated findings to mitigate financial risk.",
-      tech: ["Isolation Forest", "Scikit-learn", "Pandas", "SciPy"],
-      impact: "Flagged ~10% of debit transactions as anomalous",
-      link: "https://github.com/dlifeofjay/Isolation-Forest",
-    },
-    {
-      title: "Financial Inclusion Prediction",
-      description: "Modeling demographic and mobile adoption data to predict financial inclusion rates across underserved populations, enabling targeted banking accessibility strategies and data-driven policy interventions.",
-      tech: ["Scikit-learn", "Pandas", "EDA", "Python"],
-      impact: "Data-driven financial inclusion strategy",
-      link: "https://github.com/dlifeofjay/Financial-Inclusion",
-    },
-    {
-      title: "TCN Multivariate Sales Forecasting",
-      description: "Achieved a peak 92% forecasting accuracy on complex multivariate time-series data by engineering a custom PyTorch Temporal Convolutional Network, consistently outperforming traditional SARIMAX baselines.",
-      tech: ["PyTorch", "TCN", "Time Series", "Streamlit"],
-      impact: "92% forecast accuracy vs SARIMAX baseline",
+      title: "Multi-Product Sales Forecast Using Pytorch",
+      description: "Predicts future sales across multiple product lines using deep learning. Gives businesses the foresight to plan stock, allocate budgets and make smarter operational decisions well ahead of time.",
+      tech: ["Python", "Pytorch", "Deep Learning", "Numpy", "Pandas"],
+      impact: "Improved budgeting, staff and cost optimization",
       link: "https://github.com/dlifeofjay/Temporal-Convolutional-Networks",
     },
     {
-      title: "Text Emotion Classifier (Bi-LSTM + BERT)",
-      description: "Delivered a fine-grained 11-class emotion detection model achieving 79.7% accuracy. Built using PyTorch Bi-LSTM and BERT tokenization to enable nuanced sentiment analysis for complex text data.",
-      tech: ["PyTorch", "Bi-LSTM", "BERT", "HuggingFace"],
-      impact: "79.7% accuracy across 11 emotion classes",
-      link: "https://github.com/dlifeofjay/text_class",
+      title: "Fraud Detection Using Unsupervised Machine Learning",
+      description: "Automatically flags suspicious bank transactions and identifies the key risk factors driving them. Helps businesses detect and understand fraud before it causes serious financial damage.",
+      tech: ["Python", "Scikit-Learn", "Pandas", "Numpy"],
+      impact: "Clarity on vulnerable fraud factors",
+      link: "https://github.com/dlifeofjay/Fraud-detection_Isolation-Forest",
     },
-    {
-      title: "README Generator — Local LLM Dev Tool",
-      description: "Accelerated developer onboarding by creating a zero-cloud LLM tool (Qwen3 + ChromaDB) that autonomously scans entire codebases to generate structured README files.",
-      tech: ["LangChain", "Qwen3:8b", "ChromaDB", "Ollama"],
-      impact: "Zero-cloud, fully local LLM documentation",
-      link: "https://github.com/dlifeofjay",
-    },
-    {
-      title: "Fake News Detection — Deep NLP Pipeline",
-      description: "Engineered a high-precision misinformation detection pipeline by pairing TF-IDF extraction with a Keras deep neural network for automated classification of genuine versus fake news content.",
-      tech: ["Keras", "TF-IDF", "NLP", "Scikit-learn"],
-      impact: "High-precision misinformation classification",
-      link: "https://github.com/dlifeofjay/text_authenticity",
-    },
-    {
-      title: "Diabetic Foot Complication Detection",
-      description: "Early-warning diagnostic dashboard for diabetic foot complications. Processed raw thermographic imagery through signal-processing and ROC-tuned pipeline to output instant risk classifications.",
-      tech: ["OpenCV", "scikit-learn", "Signal Processing"],
-      impact: "Clinical dashboard: NORMAL / WARNING / HIGH RISK",
-      link: "https://github.com/dlifeofjay",
-    },
-    {
-      title: "Configurable Data Preprocessing Pipeline",
-      description: "Standardized cross-modality ML pipelines by building a unified YAML-driven preprocessing engine for tabular, image, and video datasets, significantly reducing data preparation time.",
-      tech: ["Python", "YAML", "OpenCV", "Pandas"],
-      impact: "Unified pipeline for 3 data modalities",
-      link: "https://github.com/dlifeofjay",
-    }
   ];
 
   const featuredProject = projects[0];
@@ -121,8 +79,9 @@ export default function Portfolio() {
         <div className="profile-container mb-8">
           <img src={profileImg} alt="Jubril Ifekoya" className="profile-img" />
         </div>
-        <h1>Jubril Ifekoya</h1>
-        <p>I don’t just solve problems with data and AI, I uncover the ones businesses didn’t know existed, From identifying revenue gaps and optimizing cost drivers to enabling targeted and effective marketing, I use data to find real business leverage.</p>
+        <h1>What Exactly do i do?</h1>
+        <p>Hi, i'm <strong>Jubril Ifekoya</strong>, a data scientist who specialises in turning data into decisions. My work spans customer behaviour analysis, sales forecasting, fraud detection, personalised recommendation systems and research. Whether you're a business trying to understand your customers better, boost revenue through smarter targeting, reduce risk or plan ahead with accurate forecasts, i break the problem down and build a data-driven solution around it. Got something you'd like to work on? Hit the contact page and let's talk.</p>
+        <p>In the meantime, don't hesitate to scroll down and check out some of the work i've done.</p>
         <button onClick={scrollToContent} className="btn-continue">
           <ChevronDown size={32} className="mx-auto" />
         </button>
